@@ -5,8 +5,16 @@
  * generador de aleatorios.
  * Imprimir el promedio de los valores del array.
  */
-
-int main() {
-  // solucion
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(int argc, char const *argv[]) {
+  srand(atoi(argv[1]));
+  int array[100], sum= 0;
+  for (size_t i = 0; i < 100; i++) {
+    array[i]= (rand()%100)+1;
+    sum+= array[i];
+  }
+  printf("%.2lf\n", sum/(double)100);
   return 0;
 }
